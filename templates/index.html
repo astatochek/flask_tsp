@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>TSP SOLVER</title>
+{% endblock %}
+
+{% block body %}
+    <div class="wrapper">
+        <div class="title">TSP SOLVER 2000</div>
+        <form action="/" method="POST">
+            <input type="text" name="num" autocomplete="off" placeholder="number of nodes">
+            <div class="checkbox-item">
+                <input type="checkbox" name="circular" class="custom-checkbox" id="check-1">
+                <label for="check-1">Circular Layout</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" name="3d" class="custom-checkbox" id="check-2">
+                <label for="check-2">3-Dimensional</label>
+            </div>
+            <div class="checkbox-block">
+                <div class="checkbox-item">
+                    <input type="checkbox" name="random" class="custom-checkbox" id="check-3">
+                    <label for="check-3">Random Permutation</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" name="greedy" class="custom-checkbox" id="check-4">
+                    <label for="check-4">Greedy Algorithm</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" name="2-approx" class="custom-checkbox" id="check-5">
+                    <label for="check-5">2-Approximation</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" name="mst" class="custom-checkbox" id="check-6">
+                    <label for="check-6">Minimal Spanning Tree</label>
+                </div>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+        <div class="container">
+        {% for image in images %}
+            <div class="item"><img src="{{ image }}" alt="{{ image }} image"></div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}
